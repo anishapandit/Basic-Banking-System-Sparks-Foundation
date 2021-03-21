@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Accounts | Basic Banking System</title>
+<!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+
+<body onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./1.html">AP Bank | Easy Banking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./1.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./2.html">Users</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+<div class="my-info text-center">
+        <h2 style="color: white">Our customers</h2>
+           <div class="col wrapper">
+        <button type="submit" class="get-started" data-toggle="modal" data-target="#sendMoney" style="font-size: 20px; background-color: #E7720C; color: black;">Transfer Money</button>
+    </div> 
+     <div id="mytable" class="ag-theme-alpine"></div> 
+    <!-- Modal send money -->
+    <div class="modal" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                                               
+                    <p><label class="input-group-text" for="inputGroupSelect01" style="font-size: 22px; color: black;text-align: center;">Sender:-</label>
+                         <select name="to" id="senderName" style="color: black; background: white; width: 7.5rem; height:2.5rem; ">
+        <option value="" disabled="" selected="" >&nbsp&nbspChoose&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ▼</option>
+        <option class="table-light" value="Arjun">1. Arjun Verma</option>
+        <option class="table-light" value="Ram">2. Ram Gupta</option>
+        <option class="table-light" value="Sia">3. Sia Singh</option>
+        <option class="table-light" value="Ramesh">4. Ramesh Jain</option>
+        <option class="table-light" value="Harsh">5. Harsh Rao </option>
+        <option class="table-light" value="Venky">6. Venky Sharma</option>
+        <option class="table-light" value="Shriya">7. Shriya Sapre</option>
+        <option class="table-light" value="Anisha">8. Anisha Pandit</option>
+        <option class="table-light" value="Mahesh">9. Mahesh Patni</option> 
+        <option class="table-light" value="Raghav">10. Raghav Rao</option>  
+    </select>
+            <label class="input-group-text" for="inputGroupSelect01" style="font-size: 22px; color: black;text-align: center;">Receiver:-</label>
+             <select name="to" id="enterName" style="color: black; background: white; width: 7.5rem; height:2.5rem; ">
+        <option value="" disabled="" selected="" >&nbsp&nbspChoose&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ▼</option>
+        <option class="table-light" value="Arjun">1. Arjun Verma</option>
+        <option class="table-light" value="Ram">2. Ram Gupta</option>
+        <option class="table-light" value="Sia">3. Sia Singh</option>
+        <option class="table-light" value="Ramesh">4. Ramesh Jain</option>
+        <option class="table-light" value="Harsh">5. Harsh Rao </option>
+        <option class="table-light" value="Venky">6. Venky Sharma</option>
+        <option class="table-light" value="Shriya">7. Shriya Sapre</option>
+        <option class="table-light" value="Anisha">8. Anisha Pandit</option>
+        <option class="table-light" value="Mahesh">9. Mahesh Patni</option> 
+        <option class="table-light" value="Raghav">10. Raghav Rao</option>  
+    </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="color: black;">₹ &nbsp</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder="Enter Amount" aria-label="Amount" style="color: black;">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: black;">Close</button>
+                   <a href="alert.html"><button type="button" onclick="updateRecord()" class="btn btn-primary" data-dismiss="modal" value="Transfer" style="color: green;">Transfer</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--<div id="myGrid" class="ag-theme-alpine" style="height:550px; width:500px;"></div>-->
+  <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="mytable">
+                <thead>
+                    <tr style="background:#E7720C">
+                        <th scope="col" style="color: black; font-size: 24px; padding: 0.5rem 1rem"><i><b>Sl. No.</th>
+                        <th scope="col"  style="color: black; font-size: 24px; padding: 0.5rem 1rem"><i><b>Name</th>
+                        <th scope="col"  style="color: black; font-size: 24px; padding: 0.5rem 1rem"><i><b>Balance</th>
+                        <th scope="col"  style="color: black; font-size: 24px; padding: 0.5rem 1rem"><i><b>Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td>Arjun Verma</td>
+                        <td>
+                            <span id="Balance">₹ 45000</span>
+                        </td>
+                        <td> 
+                            <a href="./arjun.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">2</td>
+                        <td>Ram Gupta </td>
+                        <td>
+                            <span id="Balance">₹ 24000</span>
+                        </td>
+                        <td><a href="./ram.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td>Sia Singh</td>
+                        
+                        <td>
+                            <span id="Balance">₹ 34000</span>
+                        </td>
+                        <td><a href="./sia.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">4</td>
+                        <td>Ramesh Jain</td>
+                      
+                        <td>
+                            <span id="Balance">₹ 40000</span>
+                        </td>
+                        <td><a href="./ramesh.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td>Harsh Rao</td>
+                       
+                        <td>
+                            <span id="Balance">₹ 63000</span>
+                        </td>
+                        <td><a href="./harsh.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">6</td>
+                        <td>Venky Sharma</td>
+                        
+                        <td>
+                            <span id="Balance">₹ 10030</span>
+                        </td>
+                        <td><a href="./venky.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>7</td>
+                        <td>Shriya Sapre</td>
+                      
+                        <td>
+                            <span id="Balance">₹ 56000</span>
+                        </td>
+                        <td><a href="./shriya.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">8</td>
+                        <td>Anisha Pandit</td>
+                      
+                        <td>
+                            <span id="Balance">₹ 35600</span>
+                        </td>
+                        <td><a href="./anisha.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">9</td>
+                        <td>Mahesh Patni</td>
+                       
+                        <td>
+                            <span id="Balance">₹ 85000</span>
+                        </td>
+                        <td><a href="./mahesh.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">10</td>
+                        <td>Raghav rao</td>
+                        
+                        <td>
+                            <span id="Balance">₹ 13500</span>
+                        </td>
+                        <td><a href="./raghav.html"><button type="button" class="btn-info" data-dismiss="modal">view</button></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- footer starts here -->
+    <footer>
+      <hr>
+      <div class="row text-center">
+        <div class="col-md-6">
+          <p>Project made by Anisha Pandit for #gripmarch2021.</p>
+          
+        </div>
+        <div class="col-md-6 text-center">
+            <ul class="social-icons">
+              Contact Me:    
+              <li><a target="_blank" class="linkedin" href="https://www.linkedin.com/in/anisha-pandit-2b13201a0/"><i class="fab fa-linkedin fa-2x"></i></a></li>   
+            </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- footer ends here -->
+
+    <!-- spalsh screen js -->
+    <script>
+      var preloader = document.getElementById("loading");
+      function loader(){
+        preloader.style.display = 'none';
+      }
+    </script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+      });
+    </script>
+    
+</body>
+</html>
+
+   

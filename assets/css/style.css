@@ -1,0 +1,203 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #2E1114;
+}
+
+/* splash screen css starts here  */
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #e4eff2 url("https://media.giphy.com/media/YpqWbjNDq8y4DVu4BO/giphy.gif") no-repeat center center;
+    z-index: 99999;
+}
+/* splash screen css ends here  */
+
+/* navbar css starts here  */
+.bg-light{
+    background-color: white!important;
+}
+
+.navbar-brand{
+    font-family: 'Shippori Mincho B1', serif, bold;
+    font-size: 1.5rem;
+    color: black!important;
+}
+
+.nav-link{
+    color: black!important;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.nav-link:hover{
+   background-image: linear-gradient( pink, #53EEFF);
+}
+.navbar-toggler{
+    border-color: black!important;
+
+}
+/* navbar css ends here  */
+
+/* here content css starts here  */
+.transfer-content{
+    height: 100vh;
+    background-color: #E7720C ;
+    color: #ffffff;
+    padding: 3rem;
+    border-bottom-left-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    margin-bottom: 1vh;
+}
+
+.transfer-img{
+    height: 70vh;
+    width: 100%;
+}
+
+@media only screen and (max-width: 766px) {
+    .transfer-img {
+      display: none;
+    }
+}
+.get-started {
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 50px ;
+  font-size: 140%;
+  padding: 1rem 1rem; 
+  width: 200px;
+  color: #fff;
+  text-align: center;
+  background-color: #2E1114;
+  transition: 0.3s;
+}
+
+/* shine */
+.get-started {
+  background-repeat: no-repeat;
+  background-position: -300px , 0 0;
+  
+  background-image: -webkit-linear-gradient(
+    top left,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: -moz-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );    
+  background-image: -o-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  
+  -moz-background-size: 250% 250%, 100% 100%;
+       background-size: 250% 250%, 100% 100%;
+  
+  -webkit-transition: background-position 0s ease;
+     -moz-transition: background-position 0s ease;       
+       -o-transition: background-position 0s ease;
+          transition: background-position 0s ease;
+}
+
+.get-started:hover {
+  background-position: 0 0, 0 0;
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+/* get-started-buttons css end here*/
+
+.my-info{
+    padding: 2rem 5rem;
+    color: black;
+}
+
+.btn-info{
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 4rem;
+    background-color:white!important;
+    color: black!important;
+    text-align: center;
+    padding: 2px 2px 2px 2px;
+    transition: all 0.3s;
+   border-radius: 0.5rem;
+}
+
+.btn-info:hover{
+   background-image: linear-gradient( pink, #53EEFF);
+
+}
+/* footer css starts here */
+footer{
+    background-color:  white;
+    color: black;
+
+}
+
+.social-icons li{
+    list-style: none;
+    display: inline;
+    padding: 0.5rem;
+}
+
+.linkedin{
+    color: #0077b5;
+}
+/* footer css ends here  */
+.col3 {
+    width: 55%;
+    margin: auto;
+    border:solid 3px black;
+            border-top-color:black;
+            border-right-color:black;
+            border-bottom-color:black;
+            border-left-color:black;
+            text-align: center; 
+            color: black;
+            background-color: white;
+}
+
+.col {
+    width: 55%;
+    margin: auto;
+            text-align: center; 
+            color: black;
+}
+/*
+
+select {
+  border-radius: 0.5rem;
+  position: center;
+  margin: 50px ;
+  font-size: 100%;
+  padding: 0.5rem 1rem; 
+  width: 300px;
+  color: #fff;
+  text-align: center;
+  background-color: #2E1114;
+  transition: 0.3s;
+}*/
+
